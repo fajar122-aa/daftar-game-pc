@@ -17,6 +17,12 @@
     <button onclick="filterGenre('open-world')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Open World</button>
     <button onclick="filterGenre('moba')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">MOBA</button>
     <button onclick="filterGenre('sandbox')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Sandbox</button>
+    <button onclick="filterGenre('battle-royale')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Battle Royale</button>
+    <button onclick="filterGenre('survival')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Survival</button>
+    <button onclick="filterGenre('horror')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Horror</button>
+    <button onclick="filterGenre('strategy')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Strategy</button>
+    <button onclick="filterGenre('racing')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Racing</button>
+    <button onclick="filterGenre('simulator')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Simulator</button>
   </div>
 
   <!-- Daftar Game -->
@@ -29,19 +35,15 @@
     <li class="game moba">🔥 DOTA 2 <span class="text-gray-400">(MOBA)</span></li>
     <li class="game open-world">🐎 Red Dead Redemption 2 <span class="text-gray-400">(Open World)</span></li>
     <li class="game rpg">🤖 Cyberpunk 2077 <span class="text-gray-400">(RPG)</span></li>
-  </ul>
-
-  <footer class="text-center text-sm text-gray-500 mt-10">
-    &copy; 2025 DaftarGamePC. Dibuat oleh Fajar.
-  </footer>
-
-  <script>
-    function filterGenre(genre) {
-      const games = document.querySelectorAll('.game');
-      games.forEach(game => {
-        game.style.display = (genre === 'all' || game.classList.contains(genre)) ? 'list-item' : 'none';
-      });
-    }
-  </script>
-</body>
-</html>
+    <li class="game fps">🔫 CS:GO (Counter-Strike: Global Offensive) <span class="text-gray-400">(FPS)</span></li>
+    <li class="game battle-royale">🎯 Apex Legends <span class="text-gray-400">(Battle Royale)</span></li>
+    <li class="game rpg open-world">🧙‍♂️ Skyrim <span class="text-gray-400">(RPG, Open World)</span></li>
+    <li class="game survival">🪓 The Forest <span class="text-gray-400">(Survival)</span></li>
+    <li class="game horror">👻 Phasmophobia <span class="text-gray-400">(Horror, Co-op)</span></li>
+    <li class="game simulator">🚛 Euro Truck Simulator 2 <span class="text-gray-400">(Simulator)</span></li>
+    <li class="game fps">🎮 Rainbow Six Siege <span class="text-gray-400">(Tactical FPS)</span></li>
+    <li class="game racing">🏎️ Forza Horizon 5 <span class="text-gray-400">(Racing)</span></li>
+    <li class="game sandbox">🏗️ Garry’s Mod <span class="text-gray-400">(Sandbox)</span></li>
+    <li class="game fps">🧟 Left 4 Dead 2 <span class="text-gray-400">(FPS, Co-op Zombie)</span></li>
+    <li class="game rpg">🛡️ Dragon Age: Inquisition <span class="text-gray-400">(RPG)</span></li>
+    <li class="game strategy">🧠 Age of Empires IV <span class="text-gray-400">(Strategy)</span></li>
