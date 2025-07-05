@@ -1,41 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daftar Game PC & Laptop</title>
+  <title>Daftar Game PC</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <header class="text-center py-8 bg-blue-700">
-    <h1 class="text-3xl font-bold">🎮 Daftar Game PC & Laptop</h1>
-    <p class="text-sm mt-2 text-gray-200">Pilihan game seru untuk kamu mainkan!</p>
-  </header>
+<body class="bg-gray-950 text-white p-6 font-sans">
+  <h1 class="text-3xl font-bold text-center mb-6">🎮 Daftar Game PC Berdasarkan Genre</h1>
 
-  <main class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg p-4">
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA V" class="rounded-xl mb-4">
-      <h2 class="text-xl font-semibold">GTA V</h2>
-      <p class="text-sm text-gray-400 mb-2">Genre: Action, Open World</p>
-      <a href="#" class="inline-block bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl">Unduh / Info</a>
-    </div>
-    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg p-4">
-      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Valorant_cover_art.jpg" alt="Valorant" class="rounded-xl mb-4">
-      <h2 class="text-xl font-semibold">Valorant</h2>
-      <p class="text-sm text-gray-400 mb-2">Genre: FPS, Online</p>
-      <a href="#" class="inline-block bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl">Unduh / Info</a>
-    </div>
-    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg p-4">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" class="rounded-xl mb-4">
-      <h2 class="text-xl font-semibold">Minecraft</h2>
-      <p class="text-sm text-gray-400 mb-2">Genre: Sandbox, Adventure</p>
-      <a href="#" class="inline-block bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl">Unduh / Info</a>
-    </div>
-  </main>
+  <!-- Filter Genre -->
+  <div class="flex flex-wrap justify-center gap-3 mb-6">
+    <button onclick="filterGenre('all')" class="px-4 py-2 bg-blue-700 rounded-xl hover:bg-blue-500">Semua</button>
+    <button onclick="filterGenre('fps')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">FPS</button>
+    <button onclick="filterGenre('rpg')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">RPG</button>
+    <button onclick="filterGenre('open-world')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Open World</button>
+    <button onclick="filterGenre('moba')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">MOBA</button>
+    <button onclick="filterGenre('sandbox')" class="px-4 py-2 bg-gray-700 rounded-xl hover:bg-gray-600">Sandbox</button>
+  </div>
 
-  <footer class="text-center py-4 bg-gray-800 text-gray-400">
+  <!-- Daftar Game -->
+  <ul id="gameList" class="space-y-4 text-lg max-w-2xl mx-auto">
+    <li class="game fps">🔫 Valorant <span class="text-gray-400">(FPS)</span></li>
+    <li class="game open-world">🚗 GTA V <span class="text-gray-400">(Open World)</span></li>
+    <li class="game sandbox">🧱 Minecraft <span class="text-gray-400">(Sandbox)</span></li>
+    <li class="game fps">🔫 Call of Duty: Modern Warfare <span class="text-gray-400">(FPS)</span></li>
+    <li class="game rpg open-world">⚔️ The Witcher 3 <span class="text-gray-400">(RPG, Open World)</span></li>
+    <li class="game moba">🔥 DOTA 2 <span class="text-gray-400">(MOBA)</span></li>
+    <li class="game open-world">🐎 Red Dead Redemption 2 <span class="text-gray-400">(Open World)</span></li>
+    <li class="game rpg">🤖 Cyberpunk 2077 <span class="text-gray-400">(RPG)</span></li>
+  </ul>
+
+  <footer class="text-center text-sm text-gray-500 mt-10">
     &copy; 2025 DaftarGamePC. Dibuat oleh Fajar.
   </footer>
+
+  <script>
+    function filterGenre(genre) {
+      const games = document.querySelectorAll('.game');
+      games.forEach(game => {
+        game.style.display = (genre === 'all' || game.classList.contains(genre)) ? 'list-item' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
